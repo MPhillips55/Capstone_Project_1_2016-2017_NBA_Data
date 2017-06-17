@@ -4,11 +4,11 @@
 
 > I chose to work with 3 datasets compiled from box scores and NBA API feeds from the 2016-2017 NBA Season. The data was obtained from a website specializing in providing this type of sports data in csv and Excel files. At first glance the data seemed to be in decent shape, and a first pass at data wrangling the 3 files went fairly quickly. The 3 datasets are as follows:
         
-        1. 'box_Score_Team_Stats.xlsx' - 2 rows per game, 1 for the home team and one for away team. Typical box score data fills out the rest of the file.
+1. 'box_Score_Team_Stats.xlsx' - 2 rows per game, 1 for the home team and one for away team. Typical box score data fills out the rest of the file.
         
-        2. 'Player_BoxScore_Dataset.xlsx' - variable rows per game depending on how many players entered the game (and thus generated stats), 15-24 rows total per game. Typical box score data makes up the rest of this file.
+2. 'Player_BoxScore_Dataset.xlsx' - variable rows per game depending on how many players entered the game (and thus generated stats), 15-24 rows total per game. Typical box score data makes up the rest of this file.
         
-        3. 'combined-stats.csv' - the most interesting file, at least at first glance. Many, many rows per game, each one representing a play that can be recorded as a stat. Some examples of these plays would be 'foul', 'shot', 'steal', 'assist', etc. This file also contains many other variables recorded for each play including the players that are on the court at the applicable time, the players involved in the play, shot distance from the basket, time data that shows when during the game the play took place, and court coordinate data that allows mapping where the place took place on a virtual court. 
+3. 'combined-stats.csv' - the most interesting file, at least at first glance. Many, many rows per game, each one representing a play that can be recorded as a stat. Some examples of these plays would be 'foul', 'shot', 'steal', 'assist', etc. This file also contains many other variables recorded for each play including the players that are on the court at the applicable time, the players involved in the play, shot distance from the basket, time data that shows when during the game the play took place, and court coordinate data that allows mapping where the place took place on a virtual court. 
         
 ### Data Cleaning
 
