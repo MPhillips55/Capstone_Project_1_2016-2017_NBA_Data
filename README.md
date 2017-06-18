@@ -1,7 +1,7 @@
 # Capstone Project 1 
 ## 2016-2017 NBA Season Data
 
-### Capstone Project Proposal.md
+### Capstone Project Proposal
 This file contains an outline of the project goals, methods, and deliveriables.
 
 ### Data Cleaning 
