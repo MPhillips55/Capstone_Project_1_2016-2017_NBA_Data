@@ -21,7 +21,15 @@ Sports analytics is fascinating to me. The whole Moneyball phenomena has entered
 
 ### 4. In brief, outline your approach to solving this problem?
 
-> 
+> My preliminary plan is to focus on a few key areas: game pace by team, shot choice efficiency by player, team, and league-wide, assist rate per shot attempt at a team level, and rebounding/steal rates by team. 
+
+> I will compile these metrics and combine them with the win or loss information associated with that team and game. By feeding this information to machine learning algorithms (initially random forest and k-means clustering, with further investigation as necessary) a minimum baseline to achieve success should be outlined. I also plan to experiment with PCA to see if the algorithm will decide on different metrics to predict success then the ones that I have picked.
+
+### 5. What are your deliverables?
+
+> I plan on delivering project code, a series of slides explaining what the system does, an explanation of why this is important to the stakeholders, and a working model that can take in stats, from a real game or hypothetical, and predict whether the team should have won or lost. 
+
+> The ability to deal with hypotheticals is important because the team can test how much change in a certain direction is needed to improve performance.
 
 
 
