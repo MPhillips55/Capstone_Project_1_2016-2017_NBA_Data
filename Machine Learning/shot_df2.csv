@@ -1,0 +1,21 @@
+,game_id,team_in_possession,type,shot_distance,shot_type
+2,21600001,NYK,Driving Layup,1.0,close
+3,21600001,CLE,Hook Shot,4.0,close
+5,21600001,NYK,Jump Shot,20.0,mid-range
+8,21600001,CLE,Jump Shot,11.0,mid-range
+10,21600001,CLE,Jump Shot,25.0,3-pointer
+12,21600001,NYK,Jump Shot,18.0,mid-range
+14,21600001,CLE,Jump Shot,25.0,3-pointer
+19,21600001,NYK,Jump Shot,16.0,mid-range
+25,21600001,CLE,Jump Shot,20.0,mid-range
+27,21600001,CLE,Jump Shot,25.0,3-pointer
+29,21600001,NYK,Floating Jump Shot,12.0,mid-range
+31,21600001,NYK,Jump Shot,25.0,3-pointer
+35,21600001,CLE,Turnaround Jump Shot,9.0,mid-range
+37,21600001,NYK,Jump Shot,16.0,mid-range
+38,21600001,CLE,Jump Shot,25.0,3-pointer
+40,21600001,NYK,Layup,1.0,close
+42,21600001,CLE,Layup,0.0,close
+44,21600001,CLE,Jump Shot,25.0,3-pointer
+46,21600001,CLE,Jump Shot,24.0,3-pointer
+49,21600001,NYK,Jump Shot,23.0,3-pointer
