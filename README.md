@@ -1,5 +1,6 @@
 # Capstone Project 1 
 ## 2016-2017 NBA Season Data
+## Michael Phillips
 
 ### Capstone Project Proposal
 This file contains an outline of the project goals, methods, and deliveriables.
