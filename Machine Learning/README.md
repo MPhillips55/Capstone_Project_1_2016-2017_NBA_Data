@@ -1,3 +1,3 @@
-# WIP
 ## Machine Learning
-Currently combining and otherwise tweaking the datasets so they will be suitable to use in a predictive model.
+Pandas Data Wrangling - this notebook shows the steps I took to arrive at the final dataset
+merged_nba_data.csv - this is the final csv file
