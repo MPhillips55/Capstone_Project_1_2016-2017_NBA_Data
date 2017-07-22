@@ -4,7 +4,7 @@
 
 I chose to work with 3 datasets compiled from box scores and NBA API feeds from the 2016-2017 NBA Season. The data was obtained from a website specializing in providing this type of sports data in csv and Excel files. At first glance the data seemed to be in decent shape, and a first pass at wrangling the 3 files went fairly quickly. The 3 datasets are as follows:
         
-1. 'box_Score_Team_Stats.xlsx' - 2460 rows, 40 columns. 2 rows per game, 1 for the home team and one for away team. Typical NBA box score data fills out the rest of the file.
+1. 'box_Score_Team_Stats.xlsx' - 2460 rows, 40 columns. 2 rows per game, 1 for the home team and 1 for away team. Typical NBA box score data fills out the rest of the file.
         
 2. 'Player_BoxScore_Dataset.xlsx' - 26137 rows, and 23 columns. This file contains a variable number of rows per game depending on how many players entered the game (and thus generated stats), 15-24 rows total per game. Typical NBA box score data makes up the rest of this file.
         
