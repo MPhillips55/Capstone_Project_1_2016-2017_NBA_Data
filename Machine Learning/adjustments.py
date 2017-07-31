@@ -7,9 +7,13 @@ import csv
 
 stat_desc = {'FG':'Field Goals Made', 'FGA':'Field Goals Attempted', '3P':'3 Pointers Made', 
 			 '3PA':'3 Pointers Attempted', 'FT':'Free Throws Made', 'FTA':'Free Throws Attempted', 
-			 'OR':'Offensive Rebounds', 'DR':'Defensive Rebounds', 'TOT':'Total Rebounds', 
-			 'A':'Assists', 'ST':'Steals', 'TO TO':'Total Turnovers', 'BL':'Blocks', 
-			 'opp_fgpct':'Oppenents Field Goal Percentage'}
+			 'OR':'Offensive Rebounds', 'DR':'Defensive Rebounds',
+			 'TOT':'Total Rebounds', 'A':'Assists', 'PF':'Number of Personal Fouls',
+			 'ST':'Steals', 'TO TO':'Total Turnovers', 'BL':'Blocks', 'PTS':'Points', 
+			 'opp_fgpct':'Oppenents Field Goal Percentage', 'Opp_OR':"Opponent's Offensive Rebounds", 
+			 'Opp_DR':"Opponent's Defensive Rebounds", 'opp_FG':"Opponent's Made Field Goals", 
+			 'opp_FGA':"Opponent's Attempted Field Goals", 'opp_FTA':"Opponent's Attempted Free Throws", 
+			 'opp_TO TO':"Opponenet's Total Turnovers", "Opp_pts":"Opponent's Points"}
 
 df2 = pd.DataFrame.from_csv('user_input.csv')
 df2.reset_index(inplace=True)
@@ -42,7 +46,14 @@ def generate_stats(df):
 	'''function accepts a dataframe as input,
 	and generates further advanced NBA statistics for
 	modeling'''
-		
+
+	df.loc[:, 'POSS'] = (df['FGA'] + (0.44 * df['FTA']) + df['TO TO'] - df['OR'])
+	df.loc[:, 'Opp_poss'] = (df['opp_FGA'] + (0.44 * df['opp_FTA']) + df['opp_TO TO'] - df['Opp_OR'])
+	
+	df.loc[:, 'OEFF'] = (100 * (df['PTS'] / df['POSS']))
+
+	df.loc[:, 'DEFF'] = (100 * (df['Opp_pts'] / df['Opp_poss']))
+
 	df['points_per_poss'] = ((df['PTS'] / (df['FGA'] + 
                         (0.44 * df['FTA']))) * 
                         ((df['FGA'] + 
@@ -76,8 +87,8 @@ def generate_stats(df):
 	df['mid_range_pct_of_fga'] = df['mid-range'] / df['FGA']
 	df.reset_index(inplace=True)
 
-	cols = ['PTS', '3P', 'Opp_DR', 'DEFF', 'OEFF', 'FTA',
-			'FT', 'Opp_OR', 'FGA', '3PA','FG', 'index']
+	cols = ['PTS', '3P', 'Opp_DR', 'FTA', 'FT', 'Opp_OR', 'FGA', '3PA','FG', 'index','Opp_pts',
+			'opp_FTA', 'opp_TO TO', 'opp_FTA', 'opp_FG', 'opp_FGA', 'Opp_poss']
 
 	df.drop(cols,axis=1,inplace=True)
 	df.to_csv('user_input_adj.csv')

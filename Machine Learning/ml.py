@@ -9,14 +9,14 @@ import numpy as np
 from scipy import stats
 
 # import dataset from data cleaning
-df = pd.DataFrame.from_csv('merged_nba_data.csv')
+df_rf = pd.DataFrame.from_csv('merged_nba_data.csv')
 
 # create won/loss column and remove from dataframe
-y = df['win_or_loss']
-df.drop('win_or_loss', axis=1, inplace=True)
+y = df_rf['win_or_loss']
+df_rf.drop('win_or_loss', axis=1, inplace=True)
 
 # prepare data for machine learning
-X = df.values
+X = df_rf.values
 
 # use SSS to preserve ratio of classes
 sss = StratifiedShuffleSplit(test_size=0.25)
@@ -51,4 +51,4 @@ from sklearn.metrics import classification_report
 # use class values to see how the model performed
 print(classification_report(y_test, pred))
 acc_score = (accuracy_score(y_test, pred) * 100)
-print("The model predictes %.2f%% of the games it tests correctly.")
+print("The model predicts %.2f%% of the games it tests correctly." % acc_score)
