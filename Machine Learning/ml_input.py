@@ -11,8 +11,8 @@ stat_desc = {'FG':'Field Goals Made', 'FGA':'Field Goals Attempted', '3P':'3 Poi
 			 '3PA':'3 Pointers Attempted', 'FT':'Free Throws Made', 'FTA':'Free Throws Attempted', 
 			 'OR':'Offensive Rebounds', 'DR':'Defensive Rebounds', 'OEFF':'Offensive Effeciency',
 			 'DEFF':'Defensive Efficiency', 'TOT':'Total Rebounds', 'A':'Assists', 'PF':'Number of Personal Fouls',
-			 'ST':'Steals', 'TO TO':'Total Turnovers', 'POSS':'Possessions', 'PACE':'Pace', 'BL':'Blocks', 
-			 'PTS':'Points', 'rest_days_adj':'Number of Rest Days', 'opp_fgpct':'Oppenents Field Goal Percentage',
+			 'ST':'Steals', 'TO TO':'Total Turnovers', 'BL':'Blocks', 'PTS':'Points', 
+			 'rest_days_adj':'Number of Rest Days', 'opp_fgpct':'Oppenents Field Goal Percentage',
 			 'Opp_OR':"Opponent's Offensive Rebounds", 'Opp_DR':"Opponent's Defensive Rebounds",
 			 'close':'Close Range Shots', 'long-range':'Long Range Shots', 'mid-range':'Mid Range Shots'}
 
