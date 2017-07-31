@@ -16,11 +16,13 @@ df2.reset_index(inplace=True)
 
 
 def take_user_adjustment(stat_desc, df):
-	print("Input your own team's stats and test them with the predictive model.")
-	
+	'''function to allow the user to adjust various stats by a
+	percentage of their choosing.'''
+
+	print("Adjust team stats by a chosen percentage")	
 	print("Let's get started.")
 	
-	
+	# adjust user input to percentage, and update dataframe
 	for key in stat_desc:
 		df_column = key
 		print(stat_desc[key])
@@ -31,7 +33,10 @@ def take_user_adjustment(stat_desc, df):
 	return df
 
 def generate_stats(df):
-	
+	'''function accepts a dataframe as input,
+	and generates further advanced NBA statistics for
+	modeling'''
+		
 	df['points_per_poss'] = ((df['PTS'] / (df['FGA'] + 
                         (0.44 * df['FTA']))) * 
                         ((df['FGA'] + 
