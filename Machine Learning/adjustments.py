@@ -26,7 +26,13 @@ def take_user_adjustment(stat_desc, df):
 	for key in stat_desc:
 		df_column = key
 		print(stat_desc[key])
-		user_input = input()
+		
+		while True:
+			try:
+				user_input = float(input())
+				break
+			except ValueError:
+				print("Please enter a number.")
 		adjustment_val = ((float(user_input) / 100) + 1)
 		df[df_column] = df[df_column] * adjustment_val
 

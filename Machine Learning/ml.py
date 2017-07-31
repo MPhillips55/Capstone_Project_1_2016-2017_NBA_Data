@@ -50,3 +50,5 @@ from sklearn.metrics import classification_report
 
 # use class values to see how the model performed
 print(classification_report(y_test, pred))
+acc_score = (accuracy_score(y_test, pred) * 100)
+print("The model predictes %.2f%% of the games it tests correctly.")

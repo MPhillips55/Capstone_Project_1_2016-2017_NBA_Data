@@ -23,8 +23,7 @@ def take_user_input(stat_desc):
 	'''function that allows the user to input their own data,
 	   outputs a csv of their inputs, plus a dataframe'''
 	print("Input your own team's stats and test them with the predictive model.")
-	print("Let's get started.")
-	
+		
 	global df
 	
 	stat_dict = {}
@@ -33,7 +32,12 @@ def take_user_input(stat_desc):
 	for key in stat_desc:
 		iter_dict = {}
 		print(stat_desc[key])
-		user_input = input()
+		while True:
+			try:
+				user_input = float(input())
+				break
+			except ValueError:
+				print("Please enter a number.")
 		iter_dict[key] = float(user_input)
 		stat_dict.update(iter_dict)
 
