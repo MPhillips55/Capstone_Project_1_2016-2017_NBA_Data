@@ -10,7 +10,7 @@ stat_desc = {'FG':'Field Goals Made', 'FGA':'Field Goals Attempted', '3P':'3 Poi
 			 'OR':'Offensive Rebounds', 'DR':'Defensive Rebounds',
 			 'TOT':'Total Rebounds', 'A':'Assists', 'PF':'Number of Personal Fouls',
 			 'ST':'Steals', 'TO TO':'Total Turnovers', 'BL':'Blocks',  
-			 'opp_fgpct':'Oppenents Field Goal Percentage'}
+			 'opp_fgpct':'Oppenents Field Goal Percentage','PTS':'Points'}
 
 df2 = pd.DataFrame.from_csv('user_input.csv')
 df2.reset_index(inplace=True)
@@ -88,9 +88,9 @@ def generate_stats(df):
 	df['mid_range_pct_of_fga'] = df['mid-range'] / df['FGA']
 	df.reset_index(inplace=True)
 
-	cols = ['PTS', '3P', 'Opp_DR', 'FTA',
+	cols = ['3P', 'Opp_DR', 'FTA',
 			'FT', 'Opp_OR', 'FGA', '3PA','FG', 'index','opp_FG', 'opp_FGA',
-			'opp_3P']
+			'opp_3P', 'PTS']
 
 	df.drop(cols,axis=1,inplace=True)
 	df.to_csv('user_input_adj.csv')
