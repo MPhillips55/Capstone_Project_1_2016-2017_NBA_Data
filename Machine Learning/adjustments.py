@@ -9,19 +9,18 @@ stat_desc = {'FG':'Field Goals Made', 'FGA':'Field Goals Attempted', '3P':'3 Poi
 			 '3PA':'3 Pointers Attempted', 'FT':'Free Throws Made', 'FTA':'Free Throws Attempted', 
 			 'OR':'Offensive Rebounds', 'DR':'Defensive Rebounds',
 			 'TOT':'Total Rebounds', 'A':'Assists', 'PF':'Number of Personal Fouls',
-			 'ST':'Steals', 'TO TO':'Total Turnovers', 'BL':'Blocks', 'PTS':'Points', 
-			 'opp_fgpct':'Oppenents Field Goal Percentage', 'Opp_OR':"Opponent's Offensive Rebounds", 
-			 'Opp_DR':"Opponent's Defensive Rebounds", 'opp_FG':"Opponent's Made Field Goals", 
-			 'opp_FGA':"Opponent's Attempted Field Goals", 'opp_FTA':"Opponent's Attempted Free Throws", 
-			 'opp_TO TO':"Opponenet's Total Turnovers", "Opp_pts":"Opponent's Points"}
+			 'ST':'Steals', 'TO TO':'Total Turnovers', 'BL':'Blocks',  
+			 'opp_fgpct':'Oppenents Field Goal Percentage'}
 
 df2 = pd.DataFrame.from_csv('user_input.csv')
 df2.reset_index(inplace=True)
 
 
 def take_user_adjustment(stat_desc, df):
-	'''function to allow the user to adjust various stats by a
-	percentage of their choosing.'''
+	'''
+	function to allow the user to adjust various stats by a
+	percentage of their choosing
+	'''
 
 	print("Adjust team stats by a chosen percentage")	
 	print("Let's get started.")
@@ -43,16 +42,18 @@ def take_user_adjustment(stat_desc, df):
 	return df
 
 def generate_stats(df):
-	'''function accepts a dataframe as input,
-	and generates further advanced NBA statistics for
-	modeling'''
+	'''
+	accepts a dataframe as input,and 
+	generates further advanced NBA statistics for modeling
+	'''
 
 	df.loc[:, 'POSS'] = (df['FGA'] + (0.44 * df['FTA']) + df['TO TO'] - df['OR'])
-	df.loc[:, 'Opp_poss'] = (df['opp_FGA'] + (0.44 * df['opp_FTA']) + df['opp_TO TO'] - df['Opp_OR'])
 	
-	df.loc[:, 'OEFF'] = (100 * (df['PTS'] / df['POSS']))
+	df.loc[:,'opp_fgpct'] = df['opp_FG'] / df['opp_FGA']
 
-	df.loc[:, 'DEFF'] = (100 * (df['Opp_pts'] / df['Opp_poss']))
+	df.loc[:,'eff_fg_pct'] = (df['FG'] + (0.5 * df['3P'])) / df['FGA']
+
+	df.loc[:,'opp_eff_fg_pct'] = (df['opp_FG'] + (0.5 * df['opp_3P'])) / df['opp_FGA']
 
 	df['points_per_poss'] = ((df['PTS'] / (df['FGA'] + 
                         (0.44 * df['FTA']))) * 
@@ -87,8 +88,9 @@ def generate_stats(df):
 	df['mid_range_pct_of_fga'] = df['mid-range'] / df['FGA']
 	df.reset_index(inplace=True)
 
-	cols = ['PTS', '3P', 'Opp_DR', 'FTA', 'FT', 'Opp_OR', 'FGA', '3PA','FG', 'index','Opp_pts',
-			'opp_FTA', 'opp_TO TO', 'opp_FTA', 'opp_FG', 'opp_FGA', 'Opp_poss']
+	cols = ['PTS', '3P', 'Opp_DR', 'FTA',
+			'FT', 'Opp_OR', 'FGA', '3PA','FG', 'index','opp_FG', 'opp_FGA',
+			'opp_3P']
 
 	df.drop(cols,axis=1,inplace=True)
 	df.to_csv('user_input_adj.csv')
