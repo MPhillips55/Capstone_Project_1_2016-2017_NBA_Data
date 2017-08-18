@@ -90,7 +90,7 @@ def generate_stats(df):
 
 	cols = ['3P', 'Opp_DR', 'FTA',
 			'FT', 'Opp_OR', 'FGA', '3PA','FG', 'index','opp_FG', 'opp_FGA',
-			'opp_3P', 'PTS']
+			'opp_3P', 'PTS', 'POSS', 'points_per_poss']
 
 	df.drop(cols,axis=1,inplace=True)
 	df.to_csv('user_input_adj.csv')
