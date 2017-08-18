@@ -1,7 +1,7 @@
 # Capstone Project 1 Proposal
 ## 2016-2017 NBA Season Data
 
-Successful strategies in the NBA morph over time as teams adjust to rule changes that are often subtle, but can have a dramatic impact on the most efficient way to play the game. Currently, there are some hallmarks of the teams that consistently win - playing at a fast pace, spreading the floor with four or five players capable of knocking down 3-point shots, and defensive schemes formulated around long, fast players that cover each other's weaknesses. 
+Successful strategies in the NBA morph over time as teams adjust to rule changes that are often subtle but can have a dramatic impact on the most efficient way to play the game. Currently, there are some hallmarks of the teams that consistently win - playing at a fast pace, spreading the floor with four or five players capable of knocking down 3-point shots, and defensive schemes formulated around long, fast players that cover each other's weaknesses. 
 
 Sports analytics is fascinating to me. The whole Moneyball phenomena has entered pop culture, but underneath the hype, sports analytics appears to be here to stay and for good reason. These developing techniques have had profound impacts on everything from salary cap management to the prevalance of the 3-point shot in the NBA and I expect in the years to come using them effectively will become necessary to even field a team capable of winning.
 
